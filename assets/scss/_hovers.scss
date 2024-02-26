@@ -1,0 +1,22 @@
+// hover fadein
+
+.hover-fadein {
+  transition: var(--transition-fast);
+}
+@media(hover: hover) {
+	.hover-fadein:hover {
+		opacity: 0.5;
+	}
+}
+
+// hover fadein
+
+.hover-fadeout {
+	transition: var(--transition-fast);
+	opacity: 0.5;
+}
+@media(hover: hover) {
+	.hover-fadeout:hover {
+		opacity: 1;
+	}
+}

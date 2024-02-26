@@ -1,0 +1,155 @@
+.titling {
+  display: block;
+  font-family: "Druk", Arial;
+  font-weight: 700;
+  font-size: vw(80px);
+  font-style: normal;
+  line-height: 88%;
+  font-feature-settings: "clig" off, "liga" off;
+  text-transform: uppercase;
+  
+  @include max(sm) {
+    font-size: 50px;
+  }
+}
+
+.hero-subserif {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Voyuer-Regular", serif;
+  letter-spacing: -3px;
+  font-size: vw(96.237px);
+  font-style: normal;
+  line-height: 90%;
+
+  @include max(sm) {
+    color: #000;
+    text-align: center;
+    font-size: 60px;
+  }
+}
+
+.fly-titling {
+  display: block;
+  font-family: "Druk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: vw(76.19px);
+  font-style: normal;
+  line-height: 90%;
+  color: var(--color-black);
+  font-feature-settings: "clig" off, "liga" off;
+
+  @include max(sm) {
+    font-size: 40px;
+  }
+}
+
+.fly-subserif {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Voyuer-Regular", serif;
+  letter-spacing: -3px;
+  font-size: vw(64.237px);
+  font-style: normal;
+  line-height: 84%;
+  margin-top: 8px;
+
+  @include max(sm) {
+    color: #000;
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+}
+
+.h2 {
+  color: #111;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Druk";
+  font-size: vw(70px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90%;
+
+  @include max(sm) {
+    text-align: center;
+    font-size: 35px;
+  }
+}
+
+.overview {
+  color: #fff;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "OTNeueMontreal-MediumSemiSqueezed", arial;
+  font-size: vw(28px);
+  font-style: normal;
+  line-height: 100%;
+  text-transform: none;
+  max-width: 526px;
+
+
+  @include max(sm) {
+    font-size: 24px;
+    line-height: 110%;
+  }
+
+  &--dark {
+    color: var(--color-black);
+  }
+}
+
+
+.h2-blue {
+  display: block;
+  color: #00f;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: 'OTNeueMontreal-MediumSemiSqueezed', Arial, Helvetica, sans-serif;
+  font-size: vw(55.393px);
+  font-style: normal;
+  line-height: 86%;
+  letter-spacing: -1.662px;
+  transform: translateY(vw(3px));
+
+  @include max(sm) {
+    text-align: center;
+    font-size: 27.696px;
+    letter-spacing: -0.831px;
+  }
+}
+
+.h3 {
+  font-size: vw(30px);
+  line-height: 110%;
+  font-family: var(--font-bold);
+  @include max(sm) {
+    font-size: 30px;
+  }
+  @include max(xs) {
+    font-size: 16px;
+  }
+}
+.h4 {
+  font-size: vw(23px);
+  line-height: 110%;
+  @include max(sm) {
+    font-size: 21px;
+  }
+  @include max(xs) {
+    font-size: 12px;
+  }
+}
+.h5 {
+  font-size: vw(26px);
+  line-height: 120%;
+  text-transform: uppercase;
+  font-family: "Druk", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 700;
+  @include max(sm) {
+    font-size: 26px;
+  }
+  @include max(xs) {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,10 @@
+.idea
+.nuxt
+.output
+node_modules
+
+assets
+public
+build
+
+*.lock

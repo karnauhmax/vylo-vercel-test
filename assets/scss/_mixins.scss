@@ -1,0 +1,47 @@
+/* for fonts */
+
+@mixin font-face($font-family, $file-path, $weight: normal) {
+	@font-face {
+		font-family: $font-family;
+		src: url('#{$file-path}.woff2') format('woff2');
+		font-style: normal;
+		font-display: block;
+		font-weight: $weight;
+	}
+}
+
+/* for adaptives */
+
+@mixin max($size) {
+	@if map-has-key($breakpoints-max, $size) {
+		@media (max-width: #{map-get($breakpoints-max, $size)}px) {
+			@content;
+		}
+	}
+
+	@else {
+		@media (max-width: #{$size}px) {
+			@content;
+		}
+	}
+}
+
+@mixin min($size) {
+	@if map-has-key($breakpoints-min, $size) {
+		@media (min-width: #{map-get($breakpoints-min, $size)}px) {
+			@content;
+		}
+	}
+
+	@else {
+		@media (min-width: #{$size}px) {
+			@content;
+		}
+	}
+}
+
+// for px to vw
+
+@function vw($px-vw, $base-vw: 1440px) {
+	@return calc(($px-vw * 100vw) / $base-vw);
+}

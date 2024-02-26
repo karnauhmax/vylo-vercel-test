@@ -1,0 +1,25 @@
+pipelines:
+  branches:
+    staging:
+      - step:
+          name: Pull and builds
+          deployment: Staging
+          script:
+            - ssh -v -p $PORT $USER@$IP_STAGING 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && git reset --hard'
+            - ssh -v -p $PORT $USER@$IP_STAGING 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && git pull origin staging'
+            - ssh -v -p $PORT $USER@$IP_STAGING 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && nvm use 20.10.0'
+            - ssh -v -p $PORT $USER@$IP_STAGING 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && npm i'
+            - ssh -v -p $PORT $USER@$IP_STAGING 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && npm run build'
+            - ssh -v -p $PORT $USER@$IP_STAGING 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && pm2 restart ecosystem.config.js'
+
+    master:
+      - step:
+          name: Pull and build
+          deployment: Production
+          script:
+            - ssh -v -p $PORT $USER@$IP_PRD 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && git reset --hard'
+            - ssh -v -p $PORT $USER@$IP_PRD 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && git pull origin master'
+            - ssh -v -p $PORT $USER@$IP_PRD 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && nvm use 20.10.0'
+            - ssh -v -p $PORT $USER@$IP_PRD 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && npm i'
+            - ssh -v -p $PORT $USER@$IP_PRD 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && npm run build'
+            - ssh -v -p $PORT $USER@$IP_PRD 'cd ~/vylo-landing/ && source ~/.nvm/nvm.sh && pm2 restart ecosystem.config.js'
